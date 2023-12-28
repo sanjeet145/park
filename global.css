@@ -25,6 +25,7 @@ a {
     padding-top: 5px;
     top: 0;
     display: flex;
+    height: 80px;
     justify-content: space-between;
 }
 
@@ -42,10 +43,10 @@ nav {
     padding-right: 5vw;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content:space-around;
 }
 
-.navigation a {
+.navigation a ,.navigation-list a{
     color: azure;
     font-weight: bold;
 }
@@ -134,10 +135,62 @@ button:hover {
     justify-content: left;
 }
 
+.small-naviagtion,.navigation-list {
+    position: absolute;
+    z-index: 10;
+}
+.bars{
+    display: none;
+}
+.bar1,
+.bar2,
+.bar3 {
+    margin-right: 10px;
+    height: 4px;
+    background-color: whitesmoke;
+    width: 40px;
+    margin-top: 3px;
+    right: 0;
+}
+
+.navigation-list {
+    display: none;
+}
+
+.show {
+    display: contents;
+}
+
+.cross .bar1 {
+    transform: translate(0, 6px) rotate(45deg);
+}
+
+.cross .bar2 {
+    opacity: 0;
+}
+
+.cross .bar3 {
+    transform: translate(0, -6px) rotate(-45deg);
+}
+
+
+.menuBtn {
+    cursor: pointer;
+    margin-left: 50px;
+    margin-bottom: 5px;
+}
+
+
 @media screen and (max-width:700px) {
     .footer {
         grid-template-columns: repeat(1, 1fr);
 
+    }
+    .navigation div{
+        display: none;
+    }
+    .bars{
+        display: contents;
     }
 }
 
@@ -145,4 +198,5 @@ button:hover {
     .gallery img:hover {
         width: 100%;
     }
+    
 }
